@@ -1,0 +1,22 @@
+[workspace]
+resolver = "2"
+members = ["crates/pie-scanner", "crates/imaging", "app"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "GPL-2.0-or-later"
+rust-version = "1.85"
+
+[workspace.dependencies]
+pie-scanner = { path = "crates/pie-scanner" }
+imaging = { path = "crates/imaging" }
+thiserror = "2"
+log = { version = "0.4", features = ["std"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+
+[profile.dev.package."*"]
+opt-level = 2

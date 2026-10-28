@@ -1,0 +1,12 @@
+[package]
+name = "imaging"
+description = "Slide-scan image processing: IR dust removal, film inversion, colour tools, export"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "tiff"] }
+tiff = "0.11"
+rayon = "1.10"
+thiserror.workspace = true

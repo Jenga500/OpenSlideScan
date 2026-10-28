@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.diascan.DiaScan</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <name>DiaScan</name>
+  <summary>Scan slide magazines with Reflecta DigitDia and PIE scanners</summary>
+  <description>
+    <p>Native Linux replacement for CyberView X5 for magazine slide scanners such as the
+    Reflecta DigitDia 4000, 5000 and 6000.</p>
+    <ul>
+      <li>Automatic scanning of entire slide magazines with empty-slot detection</li>
+      <li>Infrared dust and scratch removal</li>
+      <li>Automatic exposure, auto crop, auto levels and faded-colour restoration</li>
+      <li>Colour balance, curves and levels, sharpening and grain reduction</li>
+      <li>Slides, colour negatives and black and white film</li>
+      <li>48-bit TIFF and PNG, 24-bit TIFF and JPEG output</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">io.github.diascan.DiaScan.desktop</launchable>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.1.0" date="2026-10-28"/>
+  </releases>
+</component>

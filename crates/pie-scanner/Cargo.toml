@@ -1,0 +1,14 @@
+[package]
+name = "pie-scanner"
+description = "Driver for PIE/Reflecta USB slide scanners (DigitDia 4000/5000/6000 and relatives)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+rusb = "0.9"
+thiserror.workspace = true
+log.workspace = true
+
+[dev-dependencies]
+log.workspace = true

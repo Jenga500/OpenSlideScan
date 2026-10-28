@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=DiaScan
+GenericName=Slide Scanner
+Comment=Scan slide magazines with Reflecta DigitDia and PIE slide scanners
+Exec=diascan
+Icon=io.github.diascan.DiaScan
+Categories=Graphics;Scanning;Photography;Qt;
+Keywords=scanner;slides;digitdia;reflecta;pie;cyberview;film;
+StartupNotify=true

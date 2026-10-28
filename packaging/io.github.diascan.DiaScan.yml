@@ -1,0 +1,37 @@
+app-id: io.github.diascan.DiaScan
+runtime: org.kde.Platform
+runtime-version: '6.11'
+sdk: org.kde.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+command: diascan
+finish-args:
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=all          # raw USB access to the scanner (/dev/bus/usb)
+  - --talk-name=org.freedesktop.Flatpak   # run pkexec on the host to install the udev rule
+  - --filesystem=home     # save scans anywhere in the home folder
+  - --filesystem=xdg-pictures
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
+  env:
+    CARGO_HOME: /run/build/diascan/cargo
+    CARGO_NET_OFFLINE: 'true'
+modules:
+  - name: diascan
+    buildsystem: simple
+    sources:
+      - type: dir
+        path: ..
+        skip:
+          - target
+          - .git
+    build-commands:
+      - mkdir -p .cargo && cp packaging/cargo-vendor-config.toml .cargo/config.toml
+      - QMAKE=$(command -v qmake6 || command -v qmake) cargo build --release --offline -p diascan
+      - install -Dm755 target/release/diascan /app/bin/diascan
+      - install -Dm644 packaging/io.github.diascan.DiaScan.desktop /app/share/applications/io.github.diascan.DiaScan.desktop
+      - install -Dm644 packaging/io.github.diascan.DiaScan.metainfo.xml /app/share/metainfo/io.github.diascan.DiaScan.metainfo.xml
+      - install -Dm644 packaging/io.github.diascan.DiaScan.svg /app/share/icons/hicolor/scalable/apps/io.github.diascan.DiaScan.svg
+      - install -Dm644 packaging/60-diascan.rules /app/share/diascan/60-diascan.rules

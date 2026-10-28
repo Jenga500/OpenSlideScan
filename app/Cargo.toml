@@ -1,0 +1,19 @@
+[package]
+name = "diascan"
+description = "Slide scanner software for Reflecta DigitDia / PIE magazine slide scanners"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+pie-scanner.workspace = true
+imaging.workspace = true
+cxx = "1"
+log.workspace = true
+cxx-qt = "0.10"
+cxx-qt-lib = { version = "0.10", features = ["qt_full"] }
+ashpd = { version = "0.13", default-features = false, features = ["tokio", "file_chooser"] }
+tokio = { version = "1", features = ["rt"] }
+
+[build-dependencies]
+cxx-qt-build = { version = "0.10", features = ["link_qt_object_files"] }
