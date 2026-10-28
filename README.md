@@ -74,5 +74,3 @@ flatpak build-bundle repo diascan.flatpak io.github.diascan.DiaScan
 
 Crates: `crates/pie-scanner` (USB driver, usable on its own; `cargo run --example cli -p pie-scanner -- scan 600`),
 `crates/imaging` (dust removal, film, colour, export), `app` (Qt UI).
-
-License: GPL-2.0-or-later.
